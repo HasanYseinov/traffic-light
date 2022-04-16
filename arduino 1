@@ -1,0 +1,226 @@
+#include <LiquidCrystal.h>
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+int carsredlight=8;
+int carsyellowlight=7;
+int carsgreenlight=6;
+int walkersredlight=9;
+int walkersgreenlight=13;
+int buzzer=8;
+int i=0;
+void setup() {
+  lcd.begin(16, 2);
+  pinMode(0,OUTPUT);
+   pinMode(1,OUTPUT);
+   pinMode(A5,OUTPUT);
+   pinMode(A4,OUTPUT);
+   pinMode(A3,OUTPUT);
+   pinMode(A2,OUTPUT);
+   pinMode(A1,OUTPUT);
+  pinMode(walkersredlight,OUTPUT);
+  pinMode(walkersgreenlight,OUTPUT);
+  pinMode(carsgreenlight,OUTPUT);
+  pinMode(carsyellowlight,OUTPUT);
+  pinMode(carsgreenlight,OUTPUT);
+  pinMode(buzzer,OUTPUT);
+}
+
+void loop() 
+{
+  lcd.print("STOP");
+  digitalWrite(walkersredlight,1);
+  digitalWrite(carsredlight,1);
+   delay(1000);
+   zero();//30
+  nine();//29
+  eight();//28
+  seven();//27
+  six();//26
+  five();//25
+  four();//24
+  three();//23
+  two();//22
+  one();//21
+  zero();//20
+  nine();//19
+  eight();//18
+  seven();//17
+  six();//16
+  five();//15
+  four();//14
+  three();//13
+  two();//12
+  one();//11
+  zero();//10
+  nine();//09
+  eight();//08
+  seven();//07
+  six();//06
+  five();//05
+  four();//04
+  three();//03
+  two();//02
+  one();//01
+ digitalWrite(walkersredlight,0);
+  digitalWrite(carsredlight,0);
+  digitalWrite(carsyellowlight,1);
+ delay(1000);
+ lcd.clear();
+  lcd.print(" WAIT");
+ delay(1000);
+ digitalWrite(carsyellowlight,0);
+ digitalWrite(carsgreenlight,1);
+ digitalWrite(walkersgreenlight,1);
+  lcd.clear();
+  lcd.print(" GO ");
+   digitalWrite(buzzer,1);
+ delay(1000);
+ digitalWrite(buzzer,0);
+  zero();//30
+  nine();//29
+  eight();//28
+  seven();//27
+  six();//26
+  five();//25
+  four();//24
+  three();//23
+  two();//22
+  one();//21
+  zero();//20
+  nine();//19
+  eight();//18
+  seven();//17
+  six();//16
+  five();//15
+  four();//14
+  three();//13
+  two();//12
+  one();//11
+  zero();//10
+  nine();//09
+  eight();//08
+  seven();//07
+  six();//06
+  five();//05
+  four();//04
+  three();//03
+  two();//02
+  one();//01
+ digitalWrite(carsgreenlight,0);
+ digitalWrite(walkersgreenlight,0);
+ digitalWrite(carsredlight,1);
+ digitalWrite(walkersredlight,1);
+  lcd.clear();
+}
+void zero()
+{
+digitalWrite(0, 1);
+  digitalWrite(1, 1);
+  digitalWrite(A5, 1);
+  digitalWrite(A4, 1);
+  digitalWrite(A3, 1);
+  digitalWrite(A2, 1);
+  digitalWrite(A1, 0);
+   delay(1000);
+  clear();
+}
+void one()
+{
+  digitalWrite(1, 1);
+  digitalWrite(A5, 1);
+  delay(1000);
+  clear();
+}
+void two()
+{
+  digitalWrite(0, 1);
+  digitalWrite(1, 1);
+  digitalWrite(A1, 1);
+  digitalWrite(A4, 1);
+  digitalWrite(A3, 1);
+   delay(1000);
+  clear();
+}
+void three()
+{
+  digitalWrite(0, 1);
+  digitalWrite(1, 1);
+  digitalWrite(A5, 1);
+  digitalWrite(A4, 1);
+  digitalWrite(A1, 1);
+   delay(1000);
+  clear();
+}
+void four()
+{
+  digitalWrite(A2, 1);
+  digitalWrite(1, 1);
+  digitalWrite(A1, 1);
+  digitalWrite(A5, 1);
+  digitalWrite(A5, 1);
+   delay(1000);
+  clear();
+}
+void five()
+{
+  digitalWrite(0, 1);
+  digitalWrite(A2, 1);
+  digitalWrite(A1, 1);
+  digitalWrite(A4, 1);
+  digitalWrite(A5, 1);
+   delay(1000);
+  clear();
+
+}
+void six()
+{
+  digitalWrite(0, 1);
+  digitalWrite(A2, 1);
+  digitalWrite(A1, 1);
+  digitalWrite(A3, 1);
+  digitalWrite(A5, 1);
+  digitalWrite(A4, 1);
+   delay(1000);
+  clear();
+}
+void seven()
+{
+  digitalWrite(A5, 1);
+  digitalWrite(0, 1);
+  digitalWrite(1, 1);
+   delay(1000);
+  clear();
+}
+void eight()
+{
+  digitalWrite(0, 1);
+  digitalWrite(1, 1);
+  digitalWrite(A5, 1);
+  digitalWrite(A4, 1);
+  digitalWrite(A3, 1);
+  digitalWrite(A2, 1);
+  digitalWrite(A1, 1);
+   delay(1000);
+  clear();
+}
+void nine()
+{
+  digitalWrite(A2, 1);
+  digitalWrite(0, 1);
+  digitalWrite(1, 1);
+  digitalWrite(A1, 1);
+  digitalWrite(A5, 1);
+  digitalWrite(A4, 1);
+   delay(1000);
+  clear();
+}
+void clear()
+{
+ digitalWrite(0, 0);
+  digitalWrite(1,0);
+  digitalWrite(A5, 0);
+  digitalWrite(A4, 0);
+  digitalWrite(A3, 0);
+  digitalWrite(A2, 0);
+  digitalWrite(A1, 0);
+}
