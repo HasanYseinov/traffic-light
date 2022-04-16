@@ -1,0 +1,223 @@
+#include <LiquidCrystal.h>
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+int carsredlight=9;
+int carsyellowlight=10;
+int carsgreenlight=13;
+int walkersgreenlight=6;
+int walkersredlight=7;
+int buzzer =8;
+int i=0;
+void setup() {
+  lcd.begin(16, 2);
+  pinMode(0,OUTPUT);
+   pinMode(1,OUTPUT);
+   pinMode(A5,OUTPUT);
+   pinMode(A4,OUTPUT);
+   pinMode(A3,OUTPUT);
+   pinMode(A2,OUTPUT);
+   pinMode(A1,OUTPUT);
+  pinMode(carsredlight,OUTPUT);
+  pinMode(carsyellowlight,OUTPUT);
+  pinMode(carsgreenlight,OUTPUT);
+  pinMode(walkersredlight,OUTPUT);
+  pinMode(walkersgreenlight,OUTPUT);
+  pinMode(buzzer,OUTPUT);
+  
+}
+
+void loop() 
+{
+  lcd.print(" GO");
+  digitalWrite(carsgreenlight,1);
+  digitalWrite(walkersgreenlight,1);
+   digitalWrite(buzzer,1);
+ delay(1000);
+ digitalWrite(buzzer,0);
+  three();//30
+  two();//29
+  two();//28
+  two();//27
+  two();//26
+  two();//25
+  two();//24
+  two();//23
+  two();//22
+  two();//21
+  two();//20
+  one();//19
+  one();//18
+  one();//17
+  one();//16
+  one();//15
+  one();//14
+  one();//13
+  one();//12
+  one();//11
+  one();//10
+  zero();//09
+  zero();//08
+  zero();//07
+  zero();//06
+  zero();//05
+  zero();//04
+  zero();//03
+  zero();//02
+  zero();//01
+ digitalWrite(carsgreenlight,0);
+ digitalWrite(walkersgreenlight,0);
+ digitalWrite(carsredlight,1);
+ digitalWrite(walkersredlight,1);
+  lcd.clear();
+  lcd.print(" STOP"); 
+ delay(1000);
+  three();//30
+  two();//29
+  two();//28
+  two();//27
+  two();//26
+  two();//25
+  two();//24
+  two();//23
+  two();//22
+  two();//21
+  two();//20
+  one();//19
+  one();//18
+  one();//17
+  one();//16
+  one();//15
+  one();//14
+  one();//13
+  one();//12
+  one();//11
+  one();//10
+  zero();//09
+  zero();//08
+  zero();//07
+  zero();//06
+  zero();//05
+  zero();//04
+  zero();//03
+  zero();//02
+  zero();//01
+ digitalWrite(carsredlight,0);
+ digitalWrite(walkersredlight,1);
+ digitalWrite(carsyellowlight,1);
+ lcd.clear();
+  lcd.print(" WAIT");
+ delay(1000);
+ digitalWrite(carsyellowlight,0);
+ digitalWrite(carsgreenlight,1);
+  lcd.clear();
+}
+void zero()
+{
+digitalWrite(0, 1);
+  digitalWrite(1, 1);
+  digitalWrite(A5, 1);
+  digitalWrite(A4, 1);
+  digitalWrite(A3, 1);
+  digitalWrite(A2, 1);
+  digitalWrite(A1, 0);
+   delay(1000);
+  clear();
+}
+void one()
+{
+  digitalWrite(1, 1);
+  digitalWrite(A5, 1);
+  delay(1000);
+  clear();
+}
+void two()
+{
+  digitalWrite(0, 1);
+  digitalWrite(1, 1);
+  digitalWrite(A1, 1);
+  digitalWrite(A4, 1);
+  digitalWrite(A3, 1);
+   delay(1000);
+  clear();
+}
+void three()
+{
+  digitalWrite(0, 1);
+  digitalWrite(1, 1);
+  digitalWrite(A5, 1);
+  digitalWrite(A4, 1);
+  digitalWrite(A1, 1);
+   delay(1000);
+  clear();
+}
+void four()
+{
+  digitalWrite(A2, 1);
+  digitalWrite(1, 1);
+  digitalWrite(A1, 1);
+  digitalWrite(A5, 1);
+   delay(1000);
+  clear();
+}
+void five()
+{
+  digitalWrite(0, 1);
+  digitalWrite(A2, 1);
+  digitalWrite(A1, 1);
+  digitalWrite(A4, 1);
+  digitalWrite(A5, 1);
+   delay(1000);
+  clear();
+
+}
+void six()
+{
+  digitalWrite(0, 1);
+  digitalWrite(A2, 1);
+  digitalWrite(A1, 1);
+  digitalWrite(A3, 1);
+  digitalWrite(A5, 1);
+  digitalWrite(A4, 1);
+   delay(1000);
+  clear();
+}
+void seven()
+{
+  digitalWrite(A5, 1);
+  digitalWrite(0, 1);
+  digitalWrite(1, 1);
+   delay(1000);
+  clear();
+}
+void eight()
+{
+  digitalWrite(0, 1);
+  digitalWrite(1, 1);
+  digitalWrite(A5, 1);
+  digitalWrite(A4, 1);
+  digitalWrite(A3, 1);
+  digitalWrite(A2, 1);
+  digitalWrite(A1, 1);
+   delay(1000);
+  clear();
+}
+void nine()
+{
+  digitalWrite(A2, 1);
+  digitalWrite(0, 1);
+  digitalWrite(1, 1);
+  digitalWrite(A1, 1);
+  digitalWrite(A5, 1);
+   delay(1000);
+  clear();
+}
+void clear()
+{
+ digitalWrite(0, 0);
+  digitalWrite(1,0);
+  digitalWrite(A5, 0);
+  digitalWrite(A4, 0);
+  digitalWrite(A3, 0);
+  digitalWrite(A2, 0);
+  digitalWrite(A1, 0);
+}
